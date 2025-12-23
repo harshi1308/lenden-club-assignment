@@ -328,37 +328,5 @@ except:
 **Overall Impact:**
 The AI tools accelerated backend development by approximately 75-80%, transforming what would have been a 4-5 hour coding session into about 1 hour of work. The generated code was robust and required minimal debugging. The biggest value was in avoiding repetitive boilerplate code and reducing time spent reading documentation for Flask, SQLAlchemy, and JWT libraries.
 
----
 
-## Demo Instructions
 
-To record your demo video, show:
-
-1. **Registration:** Create 2-3 user accounts
-2. **Login:** Log in with one account
-3. **Transfer:** Send money to another user
-4. **Balance Update:** Show balance decreasing in real-time
-5. **Transaction History:** View the transaction list
-6. **Sorting:** Demonstrate sorting by date, amount, and type
-7. **Failed Transfer:** Try sending more than available balance
-8. **Logout and Switch:** Log in as the receiver to see received funds
-
-## Notes
-
-- Default starting balance for new users: $1000
-- All timestamps are in UTC
-- Passwords are hashed using Werkzeug's security module
-- JWT tokens expire after 24 hours
-- The audit log is immutable (no DELETE or UPDATE operations)
-
-## Future Enhancements
-
-- Add pagination for transaction history
-- Implement transaction filtering by date range
-- Add email notifications for received transfers
-- Create admin dashboard for monitoring
-- Add two-factor authentication
-
-## License
-
-This project is created for educational purposes as part of Assignment 2.
