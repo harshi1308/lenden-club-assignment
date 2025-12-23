@@ -2,7 +2,7 @@
 
 A peer-to-peer money transfer system with real-time transaction tracking and audit logging.
 
-## 📋 Project Overview
+## Project Overview
 
 This project implements a **secure peer-to-peer money transfer system** with JWT-based authentication and ACID-compliant transactions. The system allows users to register accounts, login securely, transfer money to other users, and view their transaction history with sorting capabilities.
 
@@ -37,7 +37,7 @@ This project implements a **secure peer-to-peer money transfer system** with JWT
 
 ---
 
-## 🚀 Setup/Run Instructions
+## Setup/Run Instructions
 
 ### Prerequisites:
 - Python 3.8 or higher
@@ -85,7 +85,7 @@ Alternatively, you can use the provided batch files:
 
 ---
 
-## 📡 API Documentation
+## API Documentation
 
 ### Base URL: `http://127.0.0.1:5000`
 
@@ -217,7 +217,7 @@ Alternatively, you can use the provided batch files:
 
 ---
 
-## 🗄️ Database Schema
+## Database Schema
 
 ### Users Table
 | Column | Type | Constraints |
@@ -249,7 +249,7 @@ Alternatively, you can use the provided batch files:
 
 ---
 
-## 💾 ACID Compliance
+## ACID Compliance
 
 The transfer endpoint implements ACID properties:
 - Atomicity: Both debit and credit operations happen together or not at all
@@ -269,7 +269,7 @@ except:
 
 ---
 
-## 🤖 AI Tool Usage Log (MANDATORY)
+## AI Tool Usage Log (MANDATORY)
 
 ### AI-Assisted Tasks:
 
@@ -299,104 +299,38 @@ except:
    - Generated consistent error response format across all endpoints
    - **Result:** Complete API with proper HTTP status codes and error handling
 
-#### 5. **Password Security Implementation**
-   - Generated Werkzeug password hashing for user registration
-   - Created password verification logic for login
-   - **Result:** Secure password storage without storing plaintext
-
-#### 6. **Frontend Dashboard with Dynamic Rendering**
-   - Generated HTML structure for dashboard with sections
-   - Created JavaScript functions for API calls using fetch()
-   - Built dynamic transaction table with real-time updates
-   - Generated form validation and error display logic
-   - **Result:** Interactive SPA that updates without page refresh
-
-#### 7. **Transaction Table Sorting Logic**
-   - Generated JavaScript sorting algorithm for multi-column sorting
-   - Created dynamic sort direction toggle (ascending/descending)
-   - Implemented type-based sorting (date, number, string)
-   - **Result:** Smooth sorting functionality with zero bugs
-
-#### 8. **Balance Update Real-time Display**
-   - Generated code to fetch and display balance after each transaction
-   - Created visual feedback for successful/failed transfers
-   - **Result:** Instant balance updates enhancing user experience
-
-#### 9. **User Dropdown Population**
-   - Generated API call to fetch all users except logged-in user
-   - Created dynamic dropdown rendering
-   - **Result:** Clean recipient selection interface
-
-#### 10. **Error Handling and User Feedback**
-   - Generated comprehensive try-catch blocks for all API calls
-   - Created user-friendly error messages for various failure scenarios
-   - Built success/error notification system
-   - **Result:** Robust error handling that never crashes
-
-#### 11. **Frontend-Backend Integration**
-   - Generated proper request headers with JWT tokens
-   - Created localStorage management for token persistence
-   - Built automatic logout on token expiration
-   - **Result:** Seamless authentication flow
-
-#### 12. **Database Initialization and Seeding**
-   - Generated code to create database tables on first run
-   - Created automatic schema migration handling
-   - **Result:** Zero-config database setup
-
-#### 13. **Code Documentation and Comments**
-   - Generated inline comments explaining complex logic
-   - Created docstrings for important functions
-   - **Result:** Maintainable and readable codebase
-
-#### 14. **Batch Files for Easy Startup**
-   - Generated Windows batch scripts for one-click backend/frontend launch
-   - Created virtual environment activation commands
-   - **Result:** Non-technical users can run the project easily
-
-#### 15. **README Documentation Structure**
-   - Generated comprehensive API documentation
-   - Created setup instructions with troubleshooting tips
-   - Built database schema visualization
-   - **Result:** Professional documentation ready for submission
-
 ---
 
-### Effectiveness Score: **4.5/5**
+### Effectiveness Score: **4/5**
 
 #### Justification:
 
-**What Worked Exceptionally Well (4-5 hours saved):**
+**What Worked Exceptionally Well (3-4 hours saved):**
+- **Flask Application Setup:** AI generated a complete Flask application structure with proper configuration, SQLAlchemy models, and CORS setup. This saved approximately 1 hour of boilerplate coding and configuration research.
+  
 - **Database Transactions:** AI-generated ACID-compliant logic was production-ready with zero modifications. Understanding and implementing proper rollback handling manually would have taken 1-2 hours of research and testing.
   
-- **JWT Authentication:** The authentication system worked perfectly on the first try. Setting up JWT from scratch typically requires reading documentation, handling edge cases, and debugging token issues - saved ~2 hours.
+- **JWT Authentication:** The authentication system worked perfectly on the first try. Setting up JWT from scratch typically requires reading documentation, handling edge cases, and debugging token issues - saved approximately 2 hours.
 
-- **Frontend Sorting Logic:** The multi-column sorting algorithm was efficient and bug-free. Writing custom sorting with ascending/descending toggle would have required significant debugging time - saved ~1 hour.
+- **API Structure:** All endpoints were generated with proper error handling, status codes, and consistent response format. This level of completeness usually requires multiple iterations - saved approximately 1 hour.
 
-- **API Structure:** All endpoints were generated with proper error handling, status codes, and consistent response format. This level of completeness usually requires multiple iterations - saved ~1 hour.
-
-**Minor Refinements Needed (~30 minutes spent):**
-- **UI Styling:** AI-generated CSS was functional but basic. Spent time customizing colors, gradients, and hover effects to make it visually appealing.
-  
-- **Error Messages:** Some error messages were too technical. Adjusted them to be more user-friendly (e.g., "Insufficient balance" instead of "BalanceConstraintViolation").
-
-- **Variable Naming:** A few variable names needed to be made more descriptive for better code readability.
+**Minor Refinements Needed (~20 minutes spent):**
+- Some error messages were too technical and needed to be made more user-friendly
+- A few variable names required adjustments for better code readability
+- Database schema relationships needed minor optimization for foreign key behavior
 
 **Why Not 5/5:**
-- Still needed to understand the generated code thoroughly before using it
-- Some edge cases in form validation required manual additions
-- Database schema relationships needed minor adjustments for optimal foreign key behavior
+- Still needed to understand the generated code thoroughly before using it in production
 - Had to manually test all API endpoints to ensure proper integration
+- Required human oversight to verify security implementations
+- Some edge cases in validation logic needed manual additions
 
 **Overall Impact:**
-The AI tools accelerated development by approximately **80%**, transforming what would have been a 6-7 hour coding session into about 1.5-2 hours of work. The generated code was surprisingly robust, requiring minimal debugging. The biggest value was in avoiding repetitive boilerplate code and reducing the time spent reading documentation.
-
-**Honest Assessment:**
-AI tools are incredibly powerful for generating boilerplate, implementing standard patterns (like JWT authentication), and creating initial project structure. However, human oversight is still crucial for ensuring security, handling edge cases, and creating a polished user experience. The combination of AI speed and human refinement is the optimal approach.
+The AI tools accelerated backend development by approximately 75-80%, transforming what would have been a 4-5 hour coding session into about 1 hour of work. The generated code was robust and required minimal debugging. The biggest value was in avoiding repetitive boilerplate code and reducing time spent reading documentation for Flask, SQLAlchemy, and JWT libraries.
 
 ---
 
-## 🎥 Demo Instructions
+## Demo Instructions
 
 To record your demo video, show:
 
@@ -409,7 +343,7 @@ To record your demo video, show:
 7. **Failed Transfer:** Try sending more than available balance
 8. **Logout and Switch:** Log in as the receiver to see received funds
 
-## 📝 Notes
+## Notes
 
 - Default starting balance for new users: $1000
 - All timestamps are in UTC
@@ -417,7 +351,7 @@ To record your demo video, show:
 - JWT tokens expire after 24 hours
 - The audit log is immutable (no DELETE or UPDATE operations)
 
-## 🚀 Future Enhancements
+## Future Enhancements
 
 - Add pagination for transaction history
 - Implement transaction filtering by date range
@@ -425,6 +359,6 @@ To record your demo video, show:
 - Create admin dashboard for monitoring
 - Add two-factor authentication
 
-## 📄 License
+## License
 
 This project is created for educational purposes as part of Assignment 2.
