@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Money Transfer System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <div class="header">
+                <h1>Money Transfer System</h1>
+                <div class="user-info">
+                    <span id="username"></span>
+                    <button onclick="logout()" class="logout-btn">Logout</button>
+                </div>
+            </div>
+
+            <div class="balance-card">
+                <h3>Your Balance</h3>
+                <div class="balance">$<span id="balance">0.00</span></div>
+            </div>
+
+            <div class="transfer-section">
+                <h2>Send Money</h2>
+                <div class="transfer-form">
+                    <select id="receiver-username" required>
+                        <option value="">Select Receiver</option>
+                    </select>
+                    <input type="number" id="amount" placeholder="Amount ($)" step="0.01" min="0.01" required>
+                    <button onclick="transfer()">Send Money</button>
+                    <div id="transfer-message" class="message"></div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h2>Transaction History</h2>
+                <div class="table-controls">
+                    <button onclick="sortTransactions('timestamp')">Sort by Date</button>
+                    <button onclick="sortTransactions('amount')">Sort by Amount</button>
+                    <button onclick="sortTransactions('type')">Sort by Type</button>
+                </div>
+                <table id="transactions-table">
+                    <thead>
+                        <tr>
+                            <th>Date/Time</th>
+                            <th>Type</th>
+                            <th>Other Party</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactions-body">
+                        <tr>
+                            <td colspan="5" class="no-data">No transactions yet</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

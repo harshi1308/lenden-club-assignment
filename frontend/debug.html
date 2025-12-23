@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Check API</title>
+</head>
+<body>
+    <h1>API Debug Tool</h1>
+    <button onclick="testUsersEndpoint()">Test /users endpoint</button>
+    <button onclick="checkToken()">Check Token</button>
+    <button onclick="clearStorage()">Clear LocalStorage</button>
+    <pre id="output"></pre>
+
+    <script>
+        const API_URL = 'http://localhost:5000';
+        
+        function checkToken() {
+            const token = localStorage.getItem('token');
+            const userId = localStorage.getItem('user_id');
+            const username = localStorage.getItem('username');
+            
+            document.getElementById('output').textContent = 
+                'Token: ' + (token ? token.substring(0, 50) + '...' : 'NOT FOUND') + '\n' +
+                'User ID: ' + userId + '\n' +
+                'Username: ' + username;
+        }
+        
+        async function testUsersEndpoint() {
+            const token = localStorage.getItem('token');
+            
+            if (!token) {
+                document.getElementById('output').textContent = 'ERROR: No token found. Please login first.';
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_URL}/users`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                const data = await response.json();
+                document.getElementById('output').textContent = 
+                    'Status: ' + response.status + '\n' +
+                    'Response: ' + JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById('output').textContent = 'ERROR: ' + error.message;
+            }
+        }
+        
+        function clearStorage() {
+            localStorage.clear();
+            document.getElementById('output').textContent = 'LocalStorage cleared!';
+        }
+    </script>
+</body>
+</html>
