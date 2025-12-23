@@ -269,7 +269,7 @@ except:
 
 ---
 
-## AI Tool Usage Log (MANDATORY)
+## AI Tool Usage Log 
 
 ### AI-Assisted Tasks:
 
